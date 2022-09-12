@@ -209,5 +209,52 @@
 </section>
 <!-- Team Area End -->
 
+<!-- Testimonials Area Start -->
+<section class="testimonial-area pb-100 pt-100" id="testimonials">
+    <div class="container">
+    <div class="row section-title white-section">
+        <div class="col-md-6 text-right">
+            <h3><span>who we are?</span> what client say</h3>
+        </div>
+        <div class="col-md-6">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
+        </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="testimonials owl-carousel">
+                
+            <?php
+                $args = array(
+                    'post_type' => 'testimonials',
+                    'post_per_page' => 4
+                );
+                $query = new WP_Query($args);
+                while ($query -> have_posts() ) {
+                    $query -> the_post();
+                    //for retriving the meta data we are using the ACF free plugin for doing it dynamiclly.
+            ?> 
+                
+                <div class="single-testimonial">
+                <div class="testi-img">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+                <p><?php the_field('testimonial_description'); ?></p>
+                <h4><?php the_title(); ?> <span><?php the_field('testimonial_sub_heading'); ?></span></h4>
+                </div>
+            <?php
+                }
+                wp_reset_postdata();
+            ?>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Testimonilas Area End -->
+
 
 <?php get_footer(); ?>
