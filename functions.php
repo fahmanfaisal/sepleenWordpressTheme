@@ -1,5 +1,9 @@
 <?php
 
+
+require_once(get_template_directory().'/inc/redux.php');
+include_once('inc/shortcode.php');
+
 // ADD Theme Support settings
 function sepleen_setup(){
     
@@ -119,4 +123,55 @@ function sepleen_custom_posts(){
 
 add_action('init', 'sepleen_custom_posts');
 
+//Our Widgets Area
+function ourWidgetsInit(){
+    register_sidebar(array(
+        'name' => 'Sidebar',
+        'id'   => 'sidebar1',
+    ));
 
+    register_sidebar(array(
+        'name' => 'Footer Area 1',
+        'id'   => 'footer1',
+        'before_widget' => '<div class="single-footer footer-logo" >',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="rounded">',
+		'after_title'   => '</h3>',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Footer Area 2',
+        'id'   => 'footer2',
+        'before_widget' => '<div class="single-footer" >',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="rounded">',
+		'after_title'   => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Footer Area 3',
+        'id'   => 'footer3',
+        'before_widget' => '<div class="single-footer" >',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="rounded">',
+		'after_title'   => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Footer Area 4',
+        'id'   => 'footer4',
+        'before_widget' => '<div class="single-footer" >',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="rounded">',
+		'after_title'   => '</h4>',
+    ));
+    register_sidebar(array(
+        'name' => 'Footer Social Icons',
+        'id'   => 'footer5',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+    ));
+
+}
+
+add_action('widgets_init', 'ourWidgetsInit');

@@ -60,22 +60,20 @@
     }
     wp_reset_postdata();
 ?>
-
-    
-    </div>
+</div>
 </section>
 <!-- Slider Area End -->
 
-<!-- Services Area Starts Here -->
 
+<!-- Services Area Starts Here -->
 <section class="services-area pt-100 pb-50" id="services">
         <div class="container">
             <div class="row section-title">
                 <div class="col-md-6 text-right">
-                    <h3><span>who we are?</span> our services</h3>
+                    <h3><span><?php echo $redux_sepleen_global['opt-service-subheading'] ?></span> <?php echo $redux_sepleen_global['opt-service-title'] ?></h3>
                 </div>
                 <div class="col-md-6">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
+                    <p><?php echo $redux_sepleen_global['opt-service-description'] ?></p>
                 </div>
                 </div>
                 <div class="row">
@@ -107,8 +105,54 @@
             </div>
         </div>
 </section>
+<!-- Services Area End Here -->
 
-    <!-- Services Area End Here -->
+
+<!-- About Area Start -->
+<section class="about-area pt-100 pb-100" id="about">
+        <div class="container">
+        <div class="row section-title">
+            <div class="col-md-6 text-right">
+                <h3><span><?php echo $redux_sepleen_global['opt-about-subheading'] ?></span> <?php echo $redux_sepleen_global['opt-about-title'] ?></h3>
+            </div>
+            <div class="col-md-6">
+                <p><?php echo $redux_sepleen_global['opt-about-description'] ?> </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="about">
+                    <div class="page-title">
+                    <h4>welcome to Sepleen</h4>
+                    </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda distinctio maxime laborum delectus aliquam ipsum itaque voluptatem non reiciendis aliquid totam facere, tempora iure iusto adipisci doloremque in, amet, alias nostrum. Explicabo reprehenderit.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
+                    <a href="#" class="box-btn">read more <i class="fa fa-angle-double-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="single_about">
+                    <i class="fa fa-laptop"></i>
+                    <h4>our mission</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
+                </div>
+                <div class="single_about">
+                    <i class="fa fa-user"></i>
+                    <h4>our vission</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
+                </div>
+                <div class="single_about">
+                    <i class="fa fa-pencil"></i>
+                    <h4>our history</h4>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
+<!-- About Us area end here:  -->
+
 
 <!-- Counter Area Start -->
 <section class="counter-area">
@@ -137,28 +181,30 @@
 </section>
 <!-- Counter Area End -->
 
+
+
 <!-- Team Area Start -->
 <section class="team-area pb-100 pt-100" id="team">
     <div class="container">
     <div class="row section-title">
         <div class="col-md-6 text-right">
-            <h3><span>who we are?</span> creative team</h3>
+            <h3><span><?php echo $redux_sepleen_global['opt-team-subheading'] ?></span> <?php echo $redux_sepleen_global['opt-team-title'] ?></h3>
         </div>
         <div class="col-md-6">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
+            <p><?php echo $redux_sepleen_global['opt-team-description'] ?></p>
         </div>
     </div>
     <div class="row">
     <?php
-                $args = array(
-                    'post_type' => 'teams',
-                    'post_per_page' => 3
-                );
-                $query = new WP_Query($args);
-                while ($query -> have_posts() ) {
-                    $query -> the_post();
-                    //for retriving the meta data we are using the ACF free plugin for doing it dynamiclly.
-        ?>
+        $args = array(
+            'post_type' => 'teams',
+            'post_per_page' => 3
+        );
+        $query = new WP_Query($args);
+        while ($query -> have_posts() ) {
+            $query -> the_post();
+            //for retriving the meta data we are using the ACF free plugin for doing it dynamiclly.
+    ?>
         <div class="col-md-4">
             <div class="single-team">
                 <?php the_post_thumbnail(); ?>
@@ -214,10 +260,10 @@
     <div class="container">
     <div class="row section-title white-section">
         <div class="col-md-6 text-right">
-            <h3><span>who we are?</span> what client say</h3>
+            <h3><span><?php echo $redux_sepleen_global['opt-testimonial-subheading'] ?></span> <?php echo $redux_sepleen_global['opt-testimonial-title'] ?></h3>
         </div>
         <div class="col-md-6">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
+            <p><?php echo $redux_sepleen_global['opt-testimonial-description'] ?></p>
         </div>
     </div>
     </div>
@@ -256,62 +302,62 @@
 </section>
 <!-- Testimonilas Area End -->
 
-    <!-- Latest News Area Start -->
-    <section class="blog-area pb-100 pt-100" id="blog">
-        <div class="container">
-        <div class="row section-title">
-            <div class="col-md-6 text-right">
-                <h3><span>who we are?</span> latest news</h3>
-            </div>
-            <div class="col-md-6">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
-            </div>
+<!-- Latest News Area Start -->
+<section class="blog-area pb-100 pt-100" id="blog">
+    <div class="container">
+    <div class="row section-title">
+        <div class="col-md-6 text-right">
+            <h3><span><?php echo $redux_sepleen_global['opt-blog-subheading'] ?></span> <?php echo $redux_sepleen_global['opt-blog-title'] ?></h3>
         </div>
-        <div class="row">
+        <div class="col-md-6">
+            <p><?php echo $redux_sepleen_global['opt-blog-description'] ?></p>
+        </div>
+    </div>
+    <div class="row">
 
-        <?php
-                $args = array(
-                    'post_type' => 'post',
-                    'post_per_page' => 3
-                );
-                $query = new WP_Query($args);
-                while ($query -> have_posts() ) {
-                    $query -> the_post();
-        ?>
-            <div class="col-md-4">
-                <div class="single-blog">
-                    <div class="post-img" style="background-image:url('<?php the_post_thumbnail_url(); ?>')"></div>
-                    <div class="post-content">
-                    <div class="post-title">
-                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                    </div>
-                    <div class="pots-meta">
-                        <ul>
-                            <li><a href="<?php get_the_author_link(); ?>"><?php the_field('single_blog_date'); ?></a></li>
-                            <li><a href="#"><?php echo get_author_name(); ?></a></li>
-                        </ul>
-                    </div>
-                    <p><?php the_excerpt(); ?></p>
-                    <?php 
-                        if(get_field('button_text')){
+    <?php
+            $args = array(
+                'post_type' => 'post',
+                'post_per_page' => 3
+            );
+            $query = new WP_Query($args);
+            while ($query -> have_posts() ) {
+                $query -> the_post();
+    ?>
+        <div class="col-md-4">
+            <div class="single-blog">
+                <div class="post-img" style="background-image:url('<?php the_post_thumbnail_url(); ?>')"></div>
+                <div class="post-content">
+                <div class="post-title">
+                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                </div>
+                <div class="pots-meta">
+                    <ul>
+                        <li><a href="<?php get_the_author_link(); ?>"><?php the_field('single_blog_date'); ?></a></li>
+                        <li><a href="#"><?php echo get_author_name(); ?></a></li>
+                    </ul>
+                </div>
+                <p><?php the_excerpt(); ?></p>
+                <?php 
+                    if(get_field('button_text')){
 
-                        ?>
-                        <a href="<?php the_permalink(); ?>" class="box-btn"><?php the_field('button_text'); ?> <i class="fa fa-angle-double-right"></i></a>
-                        <?php
-
-                        }
                     ?>
-                    </div>
+                    <a href="<?php the_permalink(); ?>" class="box-btn"><?php the_field('button_text'); ?> <i class="fa fa-angle-double-right"></i></a>
+                    <?php
+
+                    }
+                ?>
                 </div>
             </div>
-        <?php
-                }
-        ?>
+        </div>
+    <?php
+            }
+    ?>
 
-        </div>
-        </div>
-    </section>
-    <!-- Latest News Area End -->
+    </div>
+    </div>
+</section>
+<!-- Latest News Area End -->
 
 
 

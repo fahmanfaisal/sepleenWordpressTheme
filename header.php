@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The global argment with redux framework global variable diclaration   -->
+    <?php global $redux_sepleen_global ?>
     <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -26,13 +28,14 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-12">
 						<div class="header-left">
-							<a href=""><i class="fa fa-envelope"></i> info@demo.com</a>
-							<a href=""><i class="fa fa-phone"></i> 1234567890</a>
+							<a href=""><i class="fa fa-envelope"></i> <?php echo $redux_sepleen_global['opt-email'] ?></a>
+							<a href=""><i class="fa fa-phone"></i> <?php echo $redux_sepleen_global['opt-number'] ?></a>
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-12 text-right">
 						<div class="header-social">
-							<a href=""><i class="fa fa-facebook"></i></a>
+							<a href=""><i class=" <?php echo $redux_demo['opt-icon']?>"></i></a> 
+                            <!-- Redux pro neded to use this field dynamic -->
 							<a href=""><i class="fa fa-twitter"></i></a>
 							<a href=""><i class="fa fa-youtube"></i></a>
 							<a href=""><i class="fa fa-linkedin"></i></a>

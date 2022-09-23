@@ -349,8 +349,10 @@ color: #635CDB;
 .header.header-fixed.sticky li.current a {
 color: #635CDB !important;
 }
+
 .header-top {
 background-color: #635CDB;
+/* background-color: <?php echo $redux_sepleen_global['opt-color']; ?> */
 color: #fff;
 padding: 10px 0;
 }
@@ -1450,7 +1452,7 @@ opacity: .95;
 color: #635CDB;
 }
 .footer-area {
-background-image: url("../img/footer-bg.png");
+/* background-image: url("../img/footer-bg.png"); */
 background-size: cover;
 background-position: center;
 position: relative;
@@ -1568,4 +1570,8 @@ display: block;
 	width: auto;
 	background-size: cover;
 	background-position: center;
+}
+.footer-social {
+	display: flex;
+	flex-direction: row-reverse;
 }
