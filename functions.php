@@ -8,8 +8,7 @@ include_once('inc/shortcode.php');
 function sepleen_setup(){
     
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post', 'sliders','teams', 'testimonials'));
-
+    add_theme_support('post-thumbnails', array('post', 'sliders','teams', 'testimonials', 'footer'));
     //Laod Theme TesxtDomian
     load_theme_textdomain('sepleenWp', get_template_directory() . '/languages');
 
@@ -118,6 +117,19 @@ function sepleen_custom_posts(){
         'supports' => array('title','thumbnail', 'custom-fields'),
         'menu_position'       => 15,
         'menu_icon'           => 'dashicons-testimonial',
+    ));
+
+    //Footer section custom post type
+    register_post_type( 'footer', array(
+        'labels' => array(
+            'name' => __('footer' , 'sepleenWp'),
+            'singular_name' => __('Footer' , 'sepleenWp')
+        ),
+        'public' => true,
+        'show_ui' => true,
+        'supports' => array('title','thumbnail','editor', 'custom-fields'),
+        'menu_position'       => 15,
+        'menu_icon'           => 'dashicons-menu-alt3',
     ));
 }
 

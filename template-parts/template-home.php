@@ -359,6 +359,98 @@
 </section>
 <!-- Latest News Area End -->
 
+<!-- Contact Us Area Start -->
+<section class="contact-area pb-100 pt-100" id="contact">
+    <div class="container">
+    <div class="row section-title white-section">
+        <div class="col-md-6 text-right">
+            <h3><span><?php echo $redux_sepleen_global['contact-us-subheading'] ?></span> <?php echo $redux_sepleen_global['contact-us-title'] ?></h3>
+        </div>
+        <div class="col-md-6">
+            <p><?php echo $redux_sepleen_global['contact-us-description'] ?></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="row text-center">
+                <div class="col-md-12 footer-css">
+                
+                <?php
+                $args = array(
+                    'post_type' => 'footer',
+                    'post_per_page' => 3
+                );
+                $query = new WP_Query($args);
+                while ($query -> have_posts() ) {
+                    $query -> the_post();
+                    //for retriving the meta data we are using the ACF free plugin for doing it dynamiclly.
+                ?>
+                
+                
+                <div class="contact-address">
+                    <i class="<?php the_field('footer_icon'); ?>"></i>
+                    <h4><?php the_title(); ?> <span><?php the_content(); ?></span></h4>
+                </div>
+
+
+                <?php
+                }
+                wp_reset_postdata();
+                ?>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                <div class="contact-form">
+                    <form action="#">
+                        <div class="row">
+                            <input type="text" placeholder="name"/>
+                            <input type="text" placeholder="email"/>
+                            <input type="text" placeholder="subject"/>
+                            <textarea placeholder="message"></textarea>
+                            <input type="submit" value="send message"/>
+                        </div>
+                    </form>
+                </div>
+                </div>
+                <div class="col-md-5">
+                <div class="google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5785846.583418618!2d-90.75907970166762!3d44.9208869696666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d4caa3dc7ca0411%3A0x97dd48597a62c9b3!2sMichigan%2C+USA!5e0!3m2!1sen!2sbd!4v1540614431885"></iframe>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Contact Us Area End -->
+<!-- Brand Area End -->
+<div class="band pt-50 pb-50">
+    <div class="container">
+    <div class="row">
+        <div class="brand-list owl-carousel brand-image">
+                <?php 
+                
+                    $brand = $redux_sepleen_global['opt-gallery'];
+                    $brands = explode(',', $brand);
+
+                    foreach($brands as $image){
+                        $single_image = wp_get_attachment_image_src($image);
+                        ?>
+                        <img src="<?php echo $single_image[0]; ?>" alt="">
+                        <?php
+                    }
+
+                ?>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- Brand Area End -->
+
+
+<!-- Contact Us Area End -->
 
 
 <?php get_footer(); ?>

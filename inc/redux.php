@@ -219,6 +219,7 @@
     );
 
 
+
     //Footer Section 
     Redux::set_sections( 
         $opt_name, 
@@ -235,8 +236,62 @@
                     'title'    => esc_html__( 'Title', 'sepleenWp' ),
                     'desc'     => esc_html__( 'Write a Title', 'sepleenWp' ),
                 ),
+                array(
+                    'id'       => 'contact-us-title',
+                    'type'     => 'text',
+                    'title'    => esc_html__( 'Title', 'sepleenWp' ),
+                    'desc'     => esc_html__( 'Write a Title', 'sepleenWp' ),
+                ),
+                array(
+                    'id'       => 'contact-us-subheading',
+                    'type'     => 'text',
+                    'title'    => esc_html__( 'Enter a Sub Heading', 'sepleenWp' ),
+                    'desc'     => esc_html__( 'Enter heading here:', 'sepleenWp' ),
+                ),
+                array(
+                    'id'       => 'contact-us-description',
+                    'type'     => 'textarea',
+                    'title'    => esc_html__( 'Enter Description Here', 'sepleenWp' ),
+                    'desc'     => esc_html__( 'Enter some description here:', 'sepleenWp' ),
+                ),
+                array(         
+                    'id'       => 'opt-background',
+                    'type'     => 'background',
+                    'title'    => esc_html__('Body Background', 'sepleenWp'),
+                    'subtitle' => esc_html__('Body background with image, color, etc.', 'sepleenWp'),
+                    'desc'     => esc_html__('This is the description field, again good for additional info.', 'sepleenWp'),
+                    'output'   => array('background-image' => '.contact-area'),
+                    'default'  => array(
+                        'background-color' => '#1e73be',
+                    )
+                ),
                         ),
                         )
                     ) 
     );
-    
+
+    //Partners Section 
+    Redux::set_sections( 
+        $opt_name, 
+        array(
+            array(
+            'title'   => 'Partners Slider Images',
+            'icon'    => 'el el-slideshare',
+            'class'   => 'single-brand',
+            'heading' => 'Partners images settings change here',
+            'desc'    => '<br />This is the section description.  HTML is permitted.<br />',
+            'fields'  => array(
+            
+                array(
+                    'id'       => 'opt-gallery',
+                    'type'     => 'gallery',
+                    
+                    'title'    => esc_html__('Add/Edit Gallery', 'sepleenWp'),
+                    'subtitle' => esc_html__('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'sepleenWp'),
+                    'desc'     => esc_html__('This is the description field, again good for additional info.', 'sepleenWp'),
+                ),
+                        ),
+                        )
+                    ) 
+    );
+

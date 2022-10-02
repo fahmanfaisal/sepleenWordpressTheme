@@ -1424,8 +1424,9 @@ font-weight: 300;
 margin-top: 9px;
 }
 
+
 .contact-area {
-background-image: url("../img/contact_back.jpg");
+background-image: url("../img/bg-counter.jpg");
 background-size: cover;
 background-position: center;
 background-attachment: fixed;
@@ -1574,4 +1575,9 @@ display: block;
 .footer-social {
 	display: flex;
 	flex-direction: row-reverse;
+}
+
+.footer-css {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
